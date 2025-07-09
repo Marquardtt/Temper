@@ -1,14 +1,11 @@
 "use client"
 
 import { useTheme } from "next-themes";
-import Image from "next/image"
-import { useRouter } from "next/navigation"
 import 'primeicons/primeicons.css';
 import { useMounted } from "@/Hooks/useMounted"
 import { LogoIcon } from "../Icons/LogoIcon";
 
 export const HeaderComponent = () => {
-    const router = useRouter()
     const { theme, setTheme } = useTheme()
     const mounted = useMounted()
 

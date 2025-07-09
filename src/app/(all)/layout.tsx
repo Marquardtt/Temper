@@ -21,7 +21,6 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
           <div className="h-screen flex flex-col overflow-hidden">
             <HeaderComponent />

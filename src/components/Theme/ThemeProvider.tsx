@@ -1,11 +1,12 @@
-"use client"
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 
-import * as React from "react"
-import { ThemeProvider as NextThemesProvider } from "next-themes"
-
-export function ThemeProvider({
-    children,
-    ...props
-}: React.ComponentProps<typeof NextThemesProvider>) {
-    return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+export default function MyApp({ Component, pageProps }: AppProps) {
+    return (
+        <ThemeProvider attribute="class" enableSystem={true} defaultTheme="light">
+            <Component {...pageProps} />
+        </ThemeProvider>
+    );
 }
+
+export { ThemeProvider };

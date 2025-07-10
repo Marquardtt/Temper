@@ -1,14 +1,12 @@
+"use client"
+
 import { HeaderComponent } from "@/components/HeaderComponent";
 import { FooterComponent } from "@/components/FooterComponent";
 import { ThemeProvider } from "@/components/Theme/ThemeProvider"
-
 import "@/style/globals.css";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
@@ -16,7 +14,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
       </head>
-      <body className="overflow-hidden ">
+      <body className="transition-colors duration-500">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <main className="h-full">
-      <section className="h-[100vh] bg-white dark:bg-purple-100 flex justify-center items-center font-bold duration-300 transition-all">Coming soon.</section>
+      <section className="h-[100vh] bg-white dark:bg-custom-purple flex justify-center items-center font-bold duration-300 transition-all">Coming soon.</section>
     </main>
   );
 }

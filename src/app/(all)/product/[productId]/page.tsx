@@ -37,7 +37,7 @@ export default function ProductPage() {
                             <h1 className="text-white text-2xl font-bold mb-4">{product!.productName}</h1>
                             <p className="text-white mb-2">${product!.price}</p>
                             {
-                                product!!.isAvailable ? (
+                                product!.isAvailable ? (
                                     <motion.button
                                         className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors duration-300"
                                         whileHover={{ scale: 1.05 }}

@@ -1,25 +1,36 @@
-"use client"
-
 import { HeaderComponent } from "@/components/HeaderComponent";
 import { FooterComponent } from "@/components/FooterComponent";
-import { ThemeProvider } from "@/components/Theme/ThemeProvider"
+import { ClientProviders } from "@/components/ClientProviders";
+import { Alata, League_Spartan, Montserrat } from "next/font/google";
 import "@/style/globals.css";
 
-export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+const alata = Alata({ subsets: ["latin"], weight: "400", variable: "--font-alata" });
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-league-spartan",
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-montserrat",
+});
 
+export const metadata = {
+  title: "Seu título",
+  description: "Descrição do site",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Alata&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-      </head>
+    <html
+      lang="pt-BR"
+      className={`${alata.variable} ${leagueSpartan.variable} ${montserrat.variable}`}
+      suppressHydrationWarning
+    >
       <body className="transition-colors duration-500">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-        >
+        <ClientProviders>
           <div className="h-screen flex flex-col overflow-hidden">
             <HeaderComponent />
             <div className="flex-1 overflow-y-scroll">
@@ -27,7 +38,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
               <FooterComponent />
             </div>
           </div>
-        </ThemeProvider>
+        </ClientProviders>
       </body>
     </html>
   );

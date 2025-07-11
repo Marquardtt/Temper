@@ -1,0 +1,1 @@
+export { PreviewProductComponent } from "./PreviewProductComponent";

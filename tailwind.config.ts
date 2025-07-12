@@ -10,11 +10,13 @@ module.exports = {
       colors: {
         'white': '#FEFEFE',
         'black': '#101010',
-        'custom-purple': '#1D1825',
         'gray': '#EAEAEA',
         'dark-gray': '#A0A0A0',
         'other-gray': '#7a7a7a',
+
+        'custom-purple': '#1D1825',
         'light-purple': '#9377C5',
+        'extra-purple': '#5A00E9'
       },
       fontFamily: {
         alata: ['Alata', 'sans-serif'],

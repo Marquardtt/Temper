@@ -1,7 +1,7 @@
 "use client"
 
 import { useMounted } from "@/Hooks/useMounted";
-import { easeOut, motion } from "framer-motion";
+import { AnimatePresence, easeOut, motion } from "framer-motion";
 
 export default function Home() {
   const mounted = useMounted();
@@ -51,9 +51,15 @@ export default function Home() {
           animate="show"
           className="flex flex-col h-full w-full justify-center items-center gap-40 overflow-hidden "
         >
-          <motion.span variants={itemVariants} className="text-black dark:text-white">
-            Coming soon.
-          </motion.span>
+          <AnimatePresence>
+            <motion.span
+              variants={itemVariants}
+              style={{ backgroundSize: '300% 300%' }}
+              className="text-xl text-center bg-gradient-to-r from-extra-purple via-light-purple to-extra-purple bg-clip-text text-transparent inline-block "
+              animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+              transition={{ duration: 4, ease: 'easeIn', repeat: Infinity }}
+            >Coming soon.</motion.span>
+          </AnimatePresence>
         </motion.div>
 
       </section>

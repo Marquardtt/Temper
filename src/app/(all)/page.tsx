@@ -22,7 +22,7 @@ export default function Home() {
       <svg
         viewBox="0 0 1440 779"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute inset w-screen h-screen object-cover"
+        className="absolute  w-screen h-screen "
         preserveAspectRatio="none"
       >
         <defs>

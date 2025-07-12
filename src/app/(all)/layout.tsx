@@ -18,8 +18,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Seu título",
-  description: "Descrição do site",
+  title: "Temper",
+  description: "Coming soon.",
+  icons: {
+    icon: "/icon.ico"
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
